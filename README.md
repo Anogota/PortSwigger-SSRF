@@ -8,3 +8,13 @@ Pierwszym krokiem jest edytowanie StockApi, StockApi=http://localhost/admin, mus
 Dzięki temu wiemy, że znajduje się tutaj na 100% podatność SSRF. Teraz musimy usunąć carlosa.
 ```stockApi=http%3a//localhost/admin/delete%3fusername%3dcarlos```
 Dzięki temu możemy usunąć carlos i uda nam się rozwiązać zadanie.
+
+Laboratorium: Podstawowy SSRF przeciwko innemu systemowi zaplecza
+Proces indetyfikacji podatności wygląda jak powyżej. Ale napotykamy tutaj coś ciekawego, musimy zeskanować adres IP aby dowiedzieć się na jakim lokalnym porcie działa ten panel administracyjny.
+Pierwszym krokiem jest przechwycenie pakietu i wrzucanie go do intrudera, w intruderze musimy to wyglądać następująco.
+```
+stockApi=http://192.168.0.§X§:8080/admin
+```
+I musimy w payload ustawić, payload type number from 0 to 256 step 1.
+Dzięki temu uzyskaliśmy adres IP 
+ 
