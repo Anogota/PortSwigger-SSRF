@@ -18,3 +18,9 @@ stockApi=http://192.168.0.§X§:8080/admin
 I musimy w payload ustawić, payload type number from 0 to 256 step 1.
 Dzięki temu uzyskaliśmy adres IP 
  
+Laboratorium: SSRF z filtrem wejściowym opartym na czarnej liście
+W tym zadaniu ogranicza nas tylko nasza kreatywność. Znalazłem 2 sposby ale wiem, że jest ich masa na obejście tej czarnej listy.
+Jednym ze sposobów było:
+```http%3a//127.1/%25%36%31dmin```
+Zaś drugi był nieco bardziej skomplikowany za pomocą narzędzia harvester.
+```http%3A%2F%2F127.1%2F%25%36%31%25%36%34%25%36%44%25%36%39%25%36%45```
